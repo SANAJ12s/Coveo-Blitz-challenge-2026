@@ -1,6 +1,3 @@
-# Coveo-Blitz-challenge-2026
-A simple challenge to get accepted into Coveo Blitz Hackaton
-
 # 🌿 Mycelium Connection Network Challenge
 
 > “The mycelium network spans vast distances, connecting all life forms in nature's most sophisticated communication system.”  
@@ -34,36 +31,29 @@ limited by the strength of their biomass connections.
 
 For each connected colony pair:
 
+```text
 connection_strength = weakest_biomass_tile_in_path
 points = min(colony1_value, connection_strength) × min(colony2_value, connection_strength)
+🧠 Key Insight: Your connection is only as strong as its weakest link.
 
-yaml
-Copy code
+🔋 Resources
+Limited biomass operations per turn (add/remove biomass from tiles).
 
-> 🧠 **Key Insight:** Your connection is only as strong as its weakest link.
+You can see how much biomass you can move each turn.
 
----
+Plan ahead using future colony values to time your investments.
 
-## 🔋 Resources
+🤖 Getting Your Bot Ready
+Your bot receives a game state each turn and must return a list of actions.
 
-- Limited **biomass operations per turn** (add/remove biomass from tiles).  
-- You can see **how much biomass** you can move each turn.  
-- Plan ahead using **future colony values** to time your investments.
-
----
-
-## 🤖 Getting Your Bot Ready
-
-Your bot receives a **game state** each turn and must return a list of actions.
-
-### Actions
-
+Actions
 Two types of actions are available:
 
-#### AddBiomass
+AddBiomass
 Put biomass on a map position.
 
-```json
+json
+Copy code
 {
   "type": "ADD_BIOMASS",
   "position": Position,
@@ -115,7 +105,7 @@ class BiomassAction {
 
 class GameState {
   currentTick: number;
-  scores: Array<{teamId: string, score: number}>;
+  scores: Array<{ teamId: string; score: number }>;
   colonies: Array<Colony>;
   biomassMap: Array<Array<number>>; // Current biomass on each tile
   remainingBiomassOperations: number;
@@ -127,7 +117,7 @@ class GameState {
 🧭 Grid Indexing Convention
 The grid uses the convention:
 
-css
+text
 Copy code
 biomass[x][y]
 Where:
@@ -196,4 +186,16 @@ See this documentation for details.
 pgsql
 Copy code
 
-Would you like me to add a **table of contents** and **syntax highlighting (JSON/TS blocks styled)** to make it GitHub-friendly?
+---
+
+✅ **Tips for clean rendering**
+- Use ` ```text ``` ` instead of ` ```css ``` ` for plain code — this prevents unwanted highlighting.  
+- Avoid pasting from Notion or rich text editors directly into Markdown previews — they add hidden styling.  
+
+Would you like me to generate a **visually enhanced GitHub README version** (with table of contents, icons, collapsible sections, and better layout)?
+
+
+
+
+
+
